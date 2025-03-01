@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Great+Vibes&display=swap');
+/* Pour le body */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: rgb(31, 24, 24);
+    text-align: center;
+    overflow: hidden; /* so that body dosen't scroll */
+    height: 100vh; /*so that it fills the whole page*/
+}
+
+/* Pour le nav */
+nav {
+    background-color: rgba(0, 0, 0, 0.466);
+    padding: 13px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: rgb(164, 79, 53);
+}
+
+/* Main Section */
+main {
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+    overflow-y: scroll; /* Ensure vertical scrolling is enabled */
+    height: 100vh;
+}
+
+/* page1 Section */
+#page1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/image2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fix the background image */
+    scroll-snap-align: start; /* Snap to the top */
+}
+
+#page1 #name {
+    font-family: 'Great Vibes', sans-serif;
+    font-size: 110px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#page1 #intro {
+    font-family: 'Fraunces', sans-serif;
+    font-size: 20px;
+    color: rgb(14, 88, 14);
+    margin-bottom: 80px;
+}
+
+/* Additional Content Section */
+#content {
+    height: 100vh;
+    padding: 50px 20px;
+    background-color: rgb(237, 206, 176);
+    scroll-snap-align: start; /* Snap to the top */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+}
+
+#content #image1 {
+    background-image: url(../images/image3.jpg);
+    position: absolute;
+    top: 170px; left: 80px;
+    width: 250px;
+    height: 340px;
+    padding: 50px;
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#content #image2 {
+    background-image : url(../images/image4.jpg);
+    position: absolute;
+    top: 170px; left: 450px;
+    width: 250px;
+    height: 290px;
+    padding: 50px;
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#content #image3 {
+    background-image :url(../images/image5.jpg);
+    position: absolute;
+    top: 170px; left:820px;
+    width: 250px;
+    height: 240px;
+    padding: 50px;
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
