@@ -162,7 +162,7 @@ main {
     display: flex;
     justify-content: space-between; /* Aligns text & price */
     align-items: center;
-    padding: 30px 0;
+    padding: 20px 0;
     font-size: 18px;
     border-bottom: 1px solid #ddd;
     gap: 180px;
@@ -184,7 +184,7 @@ main {
 /* Image container */
 .image-container {
     width: 450px; /* Set a fixed width */
-    height: 400px; /* Set height equal to width to make it square */
+    height: 380px; /* Set height equal to width to make it square */
     position: relative;
     flex-shrink: 0; /* Prevents resizing */
     background-size: cover;

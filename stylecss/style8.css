@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Great+Vibes&display=swap');
+
+/* Pour le body */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: antiquewhite;
+    text-align: center;
+    overflow: hidden;
+    /* so that body dosen't scroll */
+    height: 100vh;
+    /*so that it fills the whole page*/
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.466);
+    padding: 13px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: rgb(164, 79, 53);
+}
+
+/* Reservation Section */
+.reservation-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #4A382A;
+    color: white;
+}
+
+.reservation-left {
+    width: 45%;
+}
+
+.reservation-left h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.open-hours p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Form Section */
+.reservation-right {
+    width: 50%;
+    background: white;
+    padding: 30px;
+    border-radius: 0;
+}
+
+.reservation-form input, 
+.reservation-form select, 
+.reservation-form button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reservation-form select {
+    background: white;
+}
+
+.reservation-form button {
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.reservation-form button:hover {
+    background: #333;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background: white;
+    color: black;
+}
+
+.footer-left h3 {
+    font-size: 24px;
+}
+
+.footer-icons span {
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}

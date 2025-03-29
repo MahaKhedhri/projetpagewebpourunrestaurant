@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General Styles */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            height: 100vh;
+            /* Full screen height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        /* Navbar Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: transparent;
+            transition: background 0.4s ease-in-out;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        /* Home Section */
+        #home {
+            background: url('https://source.unsplash.com/1600x900/?restaurant,food') no-repeat center center/cover;
+            color: white;
+        }
+
+        /* Menu Section */
+        #menu {
+            background: #f8f9fa;
+            color: black;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #ddd;
+            color: black;
+        }
+
+        /* Scrolled Navbar */
+        .scrolled {
+            background: white !important;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .scrolled a {
+            color: black !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navbar Scroll Effect</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="home">
+            <h1>Welcome to Our Restaurant</h1>
+        </section>
+
+        <section id="menu">
+            <h1>Our Menu</h1>
+            <p>Delicious meals await you...</p>
+        </section>
+
+        <section id="contact">
+            <h1>Contact Us</h1>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+    <script>
+        window.addEventListener("scroll", function () {
+            var navbar = document.getElementById("navbar");
+            var menuSection = document.getElementById("menu");
+            var menuPosition = menuSection.offsetTop;
+
+            if (window.scrollY >= menuPosition - 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+    </script>
+
+    </html>
+
+</body>
+
+</html>
