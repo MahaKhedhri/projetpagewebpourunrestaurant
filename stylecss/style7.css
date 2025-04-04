@@ -1,0 +1,109 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Great+Vibes&display=swap');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(0, 0, 0, 0.466);
+    padding: 13px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: rgb(164, 79, 53);
+}
+
+/* Container that holds the split screen */
+.container {
+    display: flex;
+    height: 100vh;  /* Full viewport height */
+    width: 100%;
+}
+
+/* Split the screen into two equal halves */
+.split {
+    height: 100%;
+    width: 50%;  /* Each side takes up 50% of the screen width */
+}
+
+/* Left side - Image */
+.left {
+    position: relative;
+    background-color: #111;
+}
+
+.left img {
+    width: 100%;
+    height: 100%;  /* Image stretches to full height */
+    object-fit: cover;  /* Ensures the image covers the space without distortion */
+}
+
+/* Right side - Text */
+.right {
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.text-content {
+    text-align: center;
+}
+
+.text-content h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}

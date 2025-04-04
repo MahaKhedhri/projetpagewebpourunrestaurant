@@ -1,121 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SmartRide - Ride Sharing</title>
+  <title>Through the ages</title>
   <link rel="stylesheet" href="stylecss/try.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="js/src.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <div class="app-container">
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="logo">
-          <div class="logo-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="m17 12-5 5-5-5m5 5V8"></path>
-            </svg>
-          </div>
-          <span>SmartRide</span>
-        </div>
-        <nav class="nav">
-          <a href="#" class="nav-link">About</a>
-          <a href="#" class="nav-link">Contact</a>
-          <a href="#" class="nav-button">Sign In</a>
-        </nav>
-      </div>
-    </header>
-    
-    <main class="container main-content">
-      <div class="content-grid">
-        <!-- Left column -->
-        <div class="left-column">
-          <div class="card">
-            <form id="ride-request-form">
-              <h2>Request a Ride</h2>
-              <div class="form-group">
-                <label for="pickup">Pickup Location</label>
-                <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address" required>
-              </div>
-              <div class="form-group">
-                <label for="destination">Destination</label>
-                <input type="text" id="destination" name="destination" placeholder="Enter destination" required>
-              </div>
-              <button type="submit" class="primary-button">Request Ride</button>
-            </form>
-          </div>
-          
-          <div id="ride-details" class="card hidden">
-            <h2>Ride Details</h2>
-            <div class="driver-info">
-              <h3>Your Driver</h3>
-              <div class="driver-profile">
-                <div class="driver-avatar"></div>
-                <div class="driver-data">
-                  <p class="driver-name">Alex Mitchell</p>
-                  <p class="driver-rating">⭐ 4.8</p>
-                  <p class="driver-car">Tesla Model Y</p>
-                  <p class="driver-license">EV-1234</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="ride-stats">
-              <div class="stat">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <span id="estimated-time">25 min</span>
-              </div>
-              <div class="stat">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                </svg>
-                <span id="price">$15.75</span>
-              </div>
-              <div class="stat">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 6H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Z"></path>
-                  <path d="m2 9 9 6 9-6"></path>
-                </svg>
-                <span id="distance">5.3 miles</span>
-              </div>
-            </div>
-            
-            <div class="passengers">
-              <h3>Passengers</h3>
-              <div id="passengers-list" class="passengers-list">
-                <!-- Passengers will be inserted here by JavaScript -->
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Right column (Map) -->
-        <div class="right-column">
-          <div id="map" class="map"></div>
-        </div>
-      </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>© 2023 SmartRide. All rights reserved.</p>
-        <p>Optimized rides with Dijkstra's algorithm.</p>
-      </div>
-    </footer>
-  </div>
+  <!-- navigation bar  -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reservation">Reservation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Toast notification container -->
-  <div id="toast-container" class="toast-container"></div>
 
-  <!-- Scripts -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-  <script src="scripts.js"></script>
+  <main class="main">
+    <!-- Home page -->
+    <section class="section" id="home">
+      <p id="name">Through the ages</p>
+      <p id="intro">Step into a timeless journey of flavors, where every dish tells a story from the past to the
+        present. <br>Welcome to <em>Through the Ages</em>—where history meets taste.</p>
+    </section>
+
+
+
+    <!-- Menu page -->
+    <section class="section" id="menu">
+      <div class="menu-buttons">
+        <button class="active" data-menu="salad">Salad</button>
+        <button data-menu="pasta">Pasta</button>
+        <button data-menu="main-course">Main Course</button>
+        <button data-menu="desserts">Desserts</button>
+        <button data-menu="specials">Specials</button>
+      </div>
+      <div class="menu-container">
+        <ul class="menu-list" id="menu-list">
+          <!-- Menu items will be dynamically added here -->
+        </ul>
+        <div class="image-container" id="image-container">
+          <!-- Images will be dynamically updated here -->
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- About page -->
+    <section class="section about text-center" aria-labelledby="about-label" id="about">
+      <div class="container">
+
+        <div class="about-content">
+          <h2 class="section-title">Through the ages</h2>
+          <p class="section-text">Through the years, our fine dining Italian restaurant has reimagined tradition with
+            elegance and innovation. Blending timeless recipes with modern artistry, we create exquisite dishes that
+            honor Italy’s rich culinary heritage while offering a refined, contemporary experience.</p>
+
+        </div>
+
+        <div class="about-banner">
+
+          <img src="images/about-banner.jpg" width="570" height="570" loading="lazy" alt="about banner" class="w-100"
+            data-parallax-item data-parallax-speed="1">
+
+          <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+            <img src="images/about-abs-image.jpg" width="285" height="285" loading="lazy" alt="" class="w-100">
+          </div>
+
+          <div class="abs-img abs-img-2 has-before">
+            <img src="images/badge-2.png" width="133" height="134" loading="lazy" alt="">
+          </div>
+
+        </div>
+
+        <img src="images/shape-3.png" width="197" height="194" loading="lazy" alt="" class="shape">
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Reservation page -->
+    <section class="section" id="reservation">
+      <div class="reservation-container">
+          <div class="reservation-form">
+              <h2>Online Reservation</h2>
+              <p>Booking request <a href="tel:+88123123456">+88-123-123456</a> or fill out the order form</p>
+              <form action="#" method="POST">
+                  <div class="form-group">
+                      <input type="text" name="name" placeholder="Your Name" required>
+                      <input type="tel" name="phone" placeholder="Phone Number" required>
+                  </div>
+                  <div class="form-group">
+                      <select name="persons">
+                          <option>1 Person</option>
+                          <option>2 People</option>
+                          <option>3 People</option>
+                          <option>4+ People</option>
+                      </select>
+                      <input type="date" name="date" required>
+                      <input type="time" name="time" required>
+                  </div>
+                  <textarea name="message" placeholder="Message (Optional)"></textarea>
+                  <button type="submit">Book a Table</button>
+              </form>
+          </div>
+  
+          <div class="contact-info">
+              <h2>Contact Us</h2>
+              <p><strong>Booking Request</strong><br> <a href="tel:+88123123456">+88-123-123456</a></p>
+              <p><strong>Location</strong><br> Restaurant St, Delicious City,<br> London 9578, UK</p>
+              <p><strong>Lunch Time</strong><br> Monday to Sunday<br> 11:00 am - 2:30 pm</p>
+              <p><strong>Dinner Time</strong><br> Monday to Sunday<br> 5:00 pm - 10:00 pm</p>
+          </div>
+      </div>
+  </section>
+  
+
+
+
+
+
+
+
+
+    <section class="section" id="contact">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <p id="name">contact</p>
+    </section>
+  </main>
 </body>
+
 </html>
