@@ -1,17 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Great+Vibes&display=swap');
+
+
+
+
+
 /* Pour le body */
 body {
   margin: 0;
+  background-color: #f1f1f1;
   font-family: sans-serif;
   color: rgb(31, 24, 24);
   text-align: center;
-  overflow-y: auto; /* Allow vertical scrolling */
-  height: auto; /* Remove fixed height */
+  overflow-y: auto; 
+  height: auto; 
 }
+
 html {
-  scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
+  scroll-behavior: smooth; /* to scroll down smoothly */
 }
+/* Pour le body */
+
+
+
+
+
 /* Pour le nav */
 nav {
     background-color: rgba(0, 0, 0, 0.466);
@@ -45,17 +58,29 @@ nav ul li a {
 nav ul li a:hover {
     color: rgb(164, 79, 53);
 }
+
 nav ul li a.active {
-  color: rgb(164, 79, 53); /* Highlight color for the active link */
-  font-weight: bold; /* Optional: Make the active link bold */
-  text-decoration: underline; /* Optional: Add underline */
+  color: rgb(164, 79, 53); 
+  font-weight: bold;
 }
-/* Main Section */
+/* Pour le nav */
+
+
+
+
+
+/* Pour le main */
 main {
-  overflow-y: auto; /* Allow vertical scrolling */
-  height: auto; /* Let the content determine the height */
-  scroll-snap-type: none; /* Disable scroll snapping */
+  overflow-y: auto; 
+  height: auto; 
+  scroll-snap-type: none; 
 }
+/* Pour le main */
+
+
+
+
+
 /* home Section */
 #home {
     height: 100vh;
@@ -67,8 +92,8 @@ main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Fix the background image */
-    scroll-snap-align: start; /* Snap to the top */
+    background-attachment: fixed; /* to keep  the background image fixed */
+    scroll-snap-align: start; /* to make it snap to top when i scroll */
 }
 
 #home #name {
@@ -84,8 +109,175 @@ main {
     color: rgb(14, 88, 14);
     margin-bottom: 80px;
 }
-   
+/* home Section */
 
+
+
+
+
+/* Offer Section */
+.offer-section {
+  display: flex;
+  height: 160vh;          
+  width: 100%;
+}
+
+                   /* Each individual column (i have 3) */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;      
+  text-align: center;
+  padding: 40px;
+  color: white;
+  background-color: #0f0f0f;
+}
+
+                   /* Middle Section (Appetizer) */
+
+.column2-title {
+  font-family: 'Fraunces', sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.column2-para{
+  font-family: 'Fraunces', sans-serif;
+  margin-bottom: 90px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  margin-bottom: 20px;
+}
+
+.background-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px; 
+  height: 420px;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/img-pattern.svg');
+  background-size: cover; 
+  background-position: center;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.image-wrapper img {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  border-radius: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.image-wrapper img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+                   /* First Section (Breakfast) */
+
+.breakfast-wrapper {
+  width: 320px;
+  height: 450px;
+  margin-top: 250px;
+  position: relative;
+}
+
+.breakfast-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;  
+  height: 420px;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/img-pattern.svg');
+  background-size: cover; 
+  background-position: center;
+  opacity: 0.5;
+  z-index: 1; 
+}
+
+.breakfast-wrapper img {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  width: 300px; 
+  height: 350px; 
+  transform: translate(-50%, -50%); 
+  z-index: 2; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.breakfast-wrapper img:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* Scale the image on hover */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Light effect */
+}
+.breakfast-text {
+  border-top: 0;
+  font-size: 25px;
+  max-width: 300px;
+  font-family: 'Fraunces', sans-serif;
+}
+
+                   /* last Section (Drinks) */
+
+ .drink-wrapper {
+  width: 360px;
+  height: 460px;
+  margin-top: 250px;
+  position: relative;
+}
+
+.drink-bg {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  width: 150px;   
+  height: 420px;
+  transform: translate(-50%, -50%); 
+  background-image: url('../images/img-pattern.svg');
+  background-size: cover; 
+  background-position: center;
+  opacity: 0.6;
+  z-index: 1; 
+}
+
+.drink-wrapper img {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  width: 300px;
+  height: 350px; 
+  transform: translate(-50%, -50%); 
+  z-index: 2; 
+  border-radius: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drink-wrapper img:hover {
+  transform: translate(-50%, -50%) scale(1.1); 
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
+}
+.drink-text {
+  border-top: 20px;
+  font-size: 25px;
+  max-width: 300px;
+  font-family: 'Fraunces', sans-serif;
+}
+/* Offer Section */
 
 
 
@@ -108,46 +300,40 @@ main {
   display: flex;
   justify-content: center;
   gap: 10px;
-  /* Space between buttons */
   margin-top: 50px;
 }
 
-/* Style the buttons */
 .menu-buttons button {
   background: white;
   border: 2px solid #4a3b2a ;
   padding: 10px 20px;
   font-size: 16px;
-  cursor: pointer;
-  /*it shows a hand when i go to click on it*/
+  cursor: pointer; /*it shows a hand when i go to click on it*/
   transition: all 0.3s ease;
   font-family: 'Arial', sans-serif;
 }
 
-/* Active button */
 .menu-buttons button.active {
   background: #4a3b2a;
-  /* Dark brown */
   color: white;
   border-color: #4a3b2a;
 }
 
-/* Hover effect */
 .menu-buttons button:hover {
   background-color: #4a3b2a;
   color: white;
 }
-/* Parent container */
+
 .menu-container {
   display: flex;
-  justify-content: space-between; /* Menu on left, image on right */
+  justify-content: space-between; 
   align-items: center;
   max-width: 1000px;
   margin: 10px auto;
   gap: 50px;
 }
 
-/* Menu list */
+
 .menu-list {
   list-style: none;
   padding: 0;
@@ -157,7 +343,7 @@ main {
 
 .menu-list li {
   display: flex;
-  justify-content: space-between; /* Aligns text & price */
+  justify-content: space-between; 
   align-items: center;
   padding: 20px 0;
   font-size: 18px;
@@ -171,14 +357,12 @@ main {
   font-family: 'Fraunces', sans-serif;
 }
 
-/* Price alignment */
 .price {
   font-size: 18px;
   color: #666;
   font-family: 'Great Vibes', sans-serif;
 }
 
-/* Image container */
 .image-container {
   width: 450px;
   height: 380px;
@@ -190,7 +374,7 @@ main {
 }
 
 .image {
-  display: block; /* Ensure the image is visible */
+  display: block; 
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -199,8 +383,7 @@ main {
   top: 0;
   left: 0;
 }
-
-
+/* Menu Section */
 
 
 
@@ -208,144 +391,111 @@ main {
 
 /* About Section */
 .about {
-  display: grid; /* Use grid layout */
-  grid-template-columns: 1fr 1fr; /* Two equal columns for text and image */
-  align-items: center; /* Align items vertically */
-  gap: 30px; /* Space between text and image */
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  align-items: center; 
+  gap: 30px;
   padding: 50px 100px;
   padding-top: 80px;
-  padding-bottom: 80px;  /* Add equal padding on left and right */
-  background-color: #f9f9f9; /* Optional background color */
+  padding-bottom: 80px;  
+  background-color: #f9f9f9; 
 }
 
 .about .container {
-  display: contents; /* Ensure the grid applies directly to children */
+  display: contents; 
 }
 
 .about-content {
-  position: relative; /* Make it the reference for the shape */
-  text-align: left; /* Align text to the left */
-  padding-right: 20px; /* Add spacing to the right of the text */
+  position: relative;
+  text-align: left; 
+  padding-right: 20px; 
 }
 
-
-
-.about-content .section-title {
+.about-content .about-section-title {
   font-family: 'Great Vibes', sans-serif;
-  font-size: 5rem; /* Increase the title size */
-  font-weight: normal; /* Make the title bold */
-  color: #2c2c2c; /* Use a slightly darker color for the title */
-  margin-bottom: 20px; /* Add spacing below the title */
+  font-size: 5rem; 
+  font-weight: normal; 
+  color: #2c2c2c; 
+  margin-bottom: 20px; 
 }
 
-.about-content .section-text {
+.about-content .about-section-text {
   font-family: 'Fraunces', sans-serif;
-  font-size: 1.1rem; /* Set the font size for the paragraph */
-  color: #555; /* Use a medium gray color for the text */
-  margin-bottom: 20px; /* Add spacing below the paragraph */
-}
-
-.about-content .contact-label {
-  font-size: 1.2rem; /* Slightly larger font for the contact label */
-  font-weight: bold; /* Make it bold */
-  color: #4a3b2a; /* Use the same dark brown color */
-  margin-top: 20px; /* Add spacing above the label */
-}
-
-.about-content .contact-number {
-  font-size: 1.5rem; /* Increase the font size for the contact number */
-  color: #2c2c2c; /* Use a dark color for the number */
-  text-decoration: none; /* Remove underline */
-}
-
-.about-content .btn {
-  font-size: 1rem; /* Set the button font size */
-  padding: 10px 20px; /* Add padding to the button */
-  background-color: #4a3b2a; /* Dark brown background */
-  color: white; /* White text */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Add rounded corners */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: background-color 0.3s ease; /* Add hover effect */
-}
-
-.about-content .btn:hover {
-  background-color: #3a2a1a; /* Darker brown on hover */
+  font-size: 1.1rem; 
+  color: #555; 
+  margin-bottom: 20px; 
 }
 
 .about-banner {
-  position: relative; /* Ensure absolute positioning for child elements */
+  position: relative;
   display: flex;
-  justify-content: flex-end; /* Align the main image to the right */
-  align-items: center; /* Center the main image vertically */
-  padding-left: 20px; /* Add padding to the left of the banner */
+  justify-content: flex-end; 
+  align-items: center; 
+  padding-left: 20px; 
 }
 
 .about-banner img {
-  max-width: 90%; /* Reduce the size of the main image */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 90%; 
+  height: auto; 
   display: block;
 }
 
 .about .abs-img {
-  position: absolute; /* Position the decorative images absolutely */
+  position: absolute; 
 }
 
 .about .abs-img-1 {
-  bottom: -50px; /* Adjust position */
-  left: 0; /* Align to the left */
-  width: 300px; /* Make the image smaller */
+  bottom: -50px; 
+  left: 0;
+  width: 300px; 
 }
 
 .about .abs-img-2 {
-  top: -30px; /* Adjust position */
-  right: 0; /* Align to the right */
-  width: 100px; /* Make the image smaller */
+  top: -30px;
+  right: 0; 
+  width: 100px; 
 }
-.shape {
-  position: absolute; /* Position it relative to the nearest positioned ancestor */
-  bottom: -50px; /* Move it below the text */
-  left: 20px; /* Align it to the left under the text */
-  width: 150px; /* Adjust the size of the shape */
-  height: auto; /* Maintain aspect ratio */
-  z-index: -1; /* Send it behind other elements */
-  opacity: 0.8; /* Optional: Add transparency */
+/* About Section */
+
+
+
+
+/* Review Section */
+.review-section {
+  background-image: url('../images/elevate-lecgcxzqT04-unsplash.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  margin-bottom: 0;
 }
-@media (max-width: 768px) {
-  .about {
-    grid-template-columns: 1fr; /* Stack text and image vertically */
-    text-align: center; /* Center-align text on smaller screens */
-    padding: 30px 20px; /* Reduce padding on smaller screens */
-  }
 
-  .about-content {
-    padding: 0; /* Remove padding on smaller screens */
-  }
-
-  .about-banner img {
-    max-width: 100%; /* Allow images to take full width */
-  }
-
-  .about .abs-img-1,
-  .about .abs-img-2 {
-    display: none; /* Hide decorative images on smaller screens */
-  }
-  .shape {
-    bottom: -30px; /* Adjust position for smaller screens */
-    left: 10px; /* Reduce left margin */
-    width: 100px; /* Make the shape smaller */
-    opacity: 0.5; /* Increase transparency */
-  }
-  .reservation .input-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-  }
-
-  .reservation .input-wrapper:nth-child(4) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.quote-container {
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  padding: 20px;
 }
+
+blockquote {
+  margin-top: -150px;
+  font-family: 'Fraunces', sans-serif;
+  font-size: 1.5em;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+cite {
+  font-size: 1.2em;
+  font-family: 'Fraunces', sans-serif;
+}
+/* Review Section */
+
+
 
 
 
@@ -360,382 +510,27 @@ main {
 
 }
 
-.reservation-container {
-  display: flex;
-  max-width: 1000px;
-  width: 100%;
-  background: #1a1a1a;
-  padding: 40px;
-  border-radius:0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.reservation-form, .@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Great+Vibes&display=swap');
-/* Pour le body */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  color: rgb(31, 24, 24);
-  text-align: center;
-  overflow-y: auto; /* Allow vertical scrolling */
-  height: auto; /* Remove fixed height */
-}
-html {
-  scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
-}
-/* Pour le nav */
-nav {
-    background-color: rgba(0, 0, 0, 0.466);
-    padding: 13px 0;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: rgb(164, 79, 53);
-}
-nav ul li a.active {
-  color: rgb(164, 79, 53); /* Highlight color for the active link */
-  font-weight: bold; /* Optional: Make the active link bold */
-  text-decoration: underline; /* Optional: Add underline */
-}
-/* Main Section */
-main {
-  overflow-y: auto; /* Allow vertical scrolling */
-  height: auto; /* Let the content determine the height */
-  scroll-snap-type: none; /* Disable scroll snapping */
-}
-/* home Section */
-#home {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../images/image2.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Fix the background image */
-    scroll-snap-align: start; /* Snap to the top */
-}
-
-#home #name {
-    font-family: 'Great Vibes', sans-serif;
-    font-size: 110px;
-    color: white;
-    margin-bottom: 5px;
-}
-
-#home #intro {
-    font-family: 'Fraunces', sans-serif;
-    font-size: 20px;
-    color: rgb(14, 88, 14);
-    margin-bottom: 80px;
-}
-   
-
-
-
-
-
-
-/* Menu Section */
-#menu {
-  height: 100vh;
-  padding: 50px 20px;
-  background-color: rgb(255, 255, 255);
-  scroll-snap-align: start;
-  /* Snap to the top */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: 20px;
-}
-
-.menu-buttons {
-  display: flex !important;
-  justify-content: center;
-  gap: 10px;
-  /* Space between buttons */
-  margin-top: 50px;
-}
-
-/* Style the buttons */
-.menu-buttons button {
-  background: white;
-  border: 2px solid #4a3b2a;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Arial', sans-serif;
-  width: auto !important;  /* Prevents unwanted width changes */
-  border-radius: 0 !important;
-}
-
-
-/* Active button */
-.menu-buttons button.active {
-  background: #4a3b2a;
-  /* Dark brown */
-  color: white;
-  border-color: #4a3b2a;
-}
-
-/* Hover effect */
-.menu-buttons button:hover {
-  background-color: #4a3b2a;
-  color: white;
-}
-/* Parent container */
-.menu-container {
-  display: flex;
-  justify-content: space-between; /* Menu on left, image on right */
-  align-items: center;
-  max-width: 1000px;
-  margin: 10px auto;
-  gap: 50px;
-}
-
-/* Menu list */
-.menu-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.menu-list li {
-  display: flex;
-  justify-content: space-between; /* Aligns text & price */
-  align-items: center;
-  padding: 20px 0;
-  font-size: 18px;
-  border-bottom: 1px solid #ddd;
-  gap: 180px;
-}
-
-.menu-list a {
-  text-decoration: none;
-  color: black;
-  font-family: 'Fraunces', sans-serif;
-}
-
-/* Price alignment */
-.price {
-  font-size: 18px;
-  color: #666;
-  font-family: 'Great Vibes', sans-serif;
-}
-
-/* Image container */
-.image-container {
-  width: 450px;
-  height: 380px;
-  position: relative;
-  flex-shrink: 0;
-  background-size: cover;
-  background-position: center;
-  transition: background 0.5s ease-in-out;
-}
-
-.image {
-  display: block; /* Ensure the image is visible */
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-
-
-
-
-
-/* About Section */
-.about {
-  display: grid; /* Use grid layout */
-  grid-template-columns: 1fr 1fr; /* Two equal columns for text and image */
-  align-items: center; /* Align items vertically */
-  gap: 30px; /* Space between text and image */
-  padding: 50px 100px;
-  padding-top: 80px;
-  padding-bottom: 80px;  /* Add equal padding on left and right */
-  background-color: #f9f9f9; /* Optional background color */
-}
-
-.about .container {
-  display: contents; /* Ensure the grid applies directly to children */
-}
-
-.about-content {
-  position: relative; /* Make it the reference for the shape */
-  text-align: left; /* Align text to the left */
-  padding-right: 20px; /* Add spacing to the right of the text */
-}
-
-
-
-.about-content .section-title {
-  font-family: 'Great Vibes', sans-serif;
-  font-size: 5rem; /* Increase the title size */
-  font-weight: normal; /* Make the title bold */
-  color: #2c2c2c; /* Use a slightly darker color for the title */
-  margin-bottom: 20px; /* Add spacing below the title */
-}
-
-.about-content .section-text {
-  font-family: 'Fraunces', sans-serif;
-  font-size: 1.1rem; /* Set the font size for the paragraph */
-  color: #555; /* Use a medium gray color for the text */
-  margin-bottom: 20px; /* Add spacing below the paragraph */
-}
-
-.about-content .contact-label {
-  font-size: 1.2rem; /* Slightly larger font for the contact label */
-  font-weight: bold; /* Make it bold */
-  color: #4a3b2a; /* Use the same dark brown color */
-  margin-top: 20px; /* Add spacing above the label */
-}
-
-.about-content .contact-number {
-  font-size: 1.5rem; /* Increase the font size for the contact number */
-  color: #2c2c2c; /* Use a dark color for the number */
-  text-decoration: none; /* Remove underline */
-}
-
-.about-content .btn {
-  font-size: 1rem; /* Set the button font size */
-  padding: 10px 20px; /* Add padding to the button */
-  background-color: #4a3b2a; /* Dark brown background */
-  color: white; /* White text */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Add rounded corners */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: background-color 0.3s ease; /* Add hover effect */
-}
-
-.about-content .btn:hover {
-  background-color: #3a2a1a; /* Darker brown on hover */
-}
-
-.about-banner {
-  position: relative; /* Ensure absolute positioning for child elements */
-  display: flex;
-  justify-content: flex-end; /* Align the main image to the right */
-  align-items: center; /* Center the main image vertically */
-  padding-left: 20px; /* Add padding to the left of the banner */
-}
-
-.about-banner img {
-  max-width: 90%; /* Reduce the size of the main image */
-  height: auto; /* Maintain aspect ratio */
-  display: block;
-}
-
-.about .abs-img {
-  position: absolute; /* Position the decorative images absolutely */
-}
-
-.about .abs-img-1 {
-  bottom: -50px; /* Adjust position */
-  left: 0; /* Align to the left */
-  width: 300px; /* Make the image smaller */
-}
-
-.about .abs-img-2 {
-  top: -30px; /* Adjust position */
-  right: 0; /* Align to the right */
-  width: 100px; /* Make the image smaller */
-}
-.shape {
-  position: absolute; /* Position it relative to the nearest positioned ancestor */
-  bottom: -50px; /* Move it below the text */
-  left: 20px; /* Align it to the left under the text */
-  width: 150px; /* Adjust the size of the shape */
-  height: auto; /* Maintain aspect ratio */
-  z-index: -1; /* Send it behind other elements */
-  opacity: 0.8; /* Optional: Add transparency */
-}
-@media (max-width: 768px) {
-  .about {
-    grid-template-columns: 1fr; /* Stack text and image vertically */
-    text-align: center; /* Center-align text on smaller screens */
-    padding: 30px 20px; /* Reduce padding on smaller screens */
-  }
-
-  .about-content {
-    padding: 0; /* Remove padding on smaller screens */
-  }
-
-  .about-banner img {
-    max-width: 100%; /* Allow images to take full width */
-  }
-
-  .about .abs-img-1,
-  .about .abs-img-2 {
-    display: none; /* Hide decorative images on smaller screens */
-  }
-  .shape {
-    bottom: -30px; /* Adjust position for smaller screens */
-    left: 10px; /* Reduce left margin */
-    width: 100px; /* Make the shape smaller */
-    opacity: 0.5; /* Increase transparency */
-  }
-  .reservation .input-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
-  }
-
-  .reservation .input-wrapper:nth-child(4) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-
-/* Reservation Section */
 .reservation-container{
   display: flex;
-  max-width: 800px; /* controls overall width */
+  max-width: 1000px;
   width: 100%;
-  margin: 0 auto; /* centers it horizontally */
+  margin: 0 auto; 
   padding: 40px;
   background-color: #1a1a1a;
   border-radius: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
   padding-bottom: 30px;
   gap: 10px;
+  background-color: #f1f1f1;
+  position: relative;
+  width: 1000px; /* Set fixed width */
+  max-width: 100vw; /* Allow it to grow, but not beyond viewport */
+  height: 500px; /* Increase height to fit form */
+  margin-top: -200px;
+  z-index: 10;
+  display: flex; /* Align left and right side */
+  padding: 20px;
+  border-radius: 0;
   
 }
 .reservation-form {
@@ -790,37 +585,420 @@ main {
 .reservation-form button:hover {
   background-color: #3a2a1a;
 }
-.contact-info {
-  position: relative; /* Ensure the container is positioned relative */
-  background-image: url('../images/form-pattern.png'); /* Add the path to your background image */
-  background-size: cover; /* Ensure the image covers the entire container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-  padding: 40px; /* Add padding for spacing inside the container */
-  border-radius: 8px; /* Optional: Add rounded corners */
-  margin-bottom: 20px; /* Add spacing below the section */
-  min-height: 300px; /* Ensure the container has a minimum height */
-  color: #fff; /* Set text color for contrast */
-}
 
-.contact-info h2 {
-  font-family: 'Great Vibes', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
+/* Reservation Section */
 
-.contact-info p {
+
+
+
+
+/* Void Section */
+.strength {
+  background-color: #f1f1f1;
+  padding: 20px;
+  position: relative;
+  height: 100px;
+}
+/* Void Section */
+
+
+
+
+
+/* Social Media Section */
+.social-wall {
+  background-color: #412929;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 700px;
+}
+.social-title {
   font-family: 'Fraunces', sans-serif;
-  font-size: 1rem;
-  color: #d3cfcf;
+  color: white;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  text-align: right; 
+  font-size: 4rem; /* Increase the title size */
+  font-weight: normal;
+}
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
 
-.contact-info a {
-  color: #ffcc00; /* Adjust link color */
-  text-decoration: none;
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  max-width: 90%;  
+  margin: 0 auto;
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
+.gallery img {
+  width: 300px;  /* Increase the image width */
+  height: auto;
+  border-radius: 0;
+  flex-shrink: 0;  /* Prevent images from shrinking */
 }
+
+.scroll-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-btn.left {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-btn.right {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.gallery::-webkit-scrollbar {
+  display: none;  /* For Chrome, Safari, and Edge */
+}
+/* Social Media Section */
+
+
+
+
+
+/* Contact Section */
+#contact{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+	align-items: center;
+  margin-top: 5000px;
+}
+.social{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFFFFF;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+}
+.social a{
+	padding: 20px;
+	color:#7b7c7c;
+	font-size:1.1rem;
+}
+.social a:hover{
+	color:#000000;
+	transition: all ease 0.3s;
+}
+.contact-box{
+	background-color:#434445;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 30px;
+	box-shadow: 2px 0px 30px rgba(0,0,0,0.1);
+}
+.c-heading h1{
+	font-family: Roboto;
+	color: #e7eef3;
+	font-size: 2.5rem;
+	font-weight: lighter;
+	margin: 0px;
+	padding: 0px;
+}
+.c-heading p{
+	font-family: Roboto;
+	color:#cecece;
+	font-size: 0.8rem;
+	font-weight: lighter;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.c-inputs{
+	margin: 15px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.c-inputs input{
+	width:250px;
+	height: 45px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgba(251,251,251,0.1);
+	outline: none;
+	margin: 10px 0px;
+	padding: 10px;
+	box-sizing: border-box;
+	color: #f4f4f4;
+	display: flex;
+}
+.c-inputs textarea{
+	width:250px !important;
+	height: 200px !important;
+	outline: none;
+	background-color: transparent;
+	border:1px solid rgba(82,82,82,1);
+	color: #f4f4f4;
+	padding: 10px;
+	font-size: 1.2rem;
+	box-sizing: border-box;
+}
+.c-inputs button{
+	width:200px;
+	height: 40px;
+	background-color: #FFFFFF;
+	border: none;
+	outline: none;
+	margin-top: 20px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+	letter-spacing: 1px;
+}
+.c-inputs input:focus{
+	border-bottom: 1px solid rgba(252,252,252,1.00);
+	transition: all ease 0.5s;
+}
+.c-inputs textarea:focus{
+	border: none;
+	border-bottom: 1px solid rgba(255,255,255,1.00);
+	transition: all ease 0.5s;
+	background-color: rgba(0,0,0,0.1);
+}
+.c-inputs button:active{
+	transform: scale(1.02);
+}
+.map{
+	filter: grayscale(0.2);
+	box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+	border: 2px solid #FFFFFF;
+}
+/* Contact Section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr; /* Stack text and image vertically */
+    text-align: center; /* Center-align text on smaller screens */
+    padding: 30px 20px; /* Reduce padding on smaller screens */
+  }
+
+  .about-content {
+    padding: 0; /* Remove padding on smaller screens */
+  }
+
+  .about-banner img {
+    max-width: 100%; /* Allow images to take full width */
+  }
+
+  .about .abs-img-1,
+  .about .abs-img-2 {
+    display: none; /* Hide decorative images on smaller screens */
+  }
+  .shape {
+    bottom: -30px; /* Adjust position for smaller screens */
+    left: 10px; /* Reduce left margin */
+    width: 100px; /* Make the shape smaller */
+    opacity: 0.5; /* Increase transparency */
+  }
+  .reservation .input-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  .reservation .input-wrapper:nth-child(4) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+
+
+/* Reservation form container */
+.reservation-container {
+  background-color: #f1f1f1;
+  position: relative;
+  width: 1000px; /* Set fixed width */
+  max-width: 100vw; /* Allow it to grow, but not beyond viewport */
+  height: 500px; /* Increase height to fit form */
+  margin-top: -200px;
+  z-index: 10;
+  display: flex; /* Align left and right side */
+  padding: 20px;
+  border-radius: 0;
+}
+
+/* Left Side Styling */
+.left-side {
+  flex: 2; /* Take up more space */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.left-side h2 {
+  font-family: 'Fraunces', sans-serif;
+    font-size: 50px; /* Adjust size */
+  color: #ffffff; /* Darker color */
+  font-weight: 300;
+  margin-bottom: 0%;
+}
+
+.left-side p {
+  font-family: 'Fraunces', sans-serif; /* Example: Modern font for paragraph */
+  font-size: 16px; /* Adjust size */
+  font-weight: 400;
+  color: #ffffff; /* Slightly lighter text */
+}
+.left-side p a {
+  color: #d4a373; /* Make it stand out */
+  text-decoration: none; /* Remove underline */
+}
+
+.left-side p a:hover {
+  color: #c78c5d; /* Slightly darker color on hover */
+}
+
+
+/* Form Styling */
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Spacing between elements */
+}
+.reservation-form .form-row {
+  display: flex;
+  gap: 10px; /* Adds space between inputs */
+}
+
+/* Ensuring inputs take equal width */
+.reservation-form .form-row select,
+.reservation-form .form-row input {
+  flex: 1;
+  width: 100%; /* Ensures they fill the row */
+}
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea,
+.reservation-form button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 0;
+  border: 1px solid #6c6a6a;
+  font-size: 16px;
+}
+
+/* Ensure all form elements, including textarea, have the same width */
+.reservation-form textarea {
+  width: 96%; /* Match other inputs */
+  padding: 12px;
+  border-radius: 0px; /* Remove rounded corners */
+  border: 1px solid #6c6a6a;
+  font-size: 16px;
+  height: 80px; /* Adjust height if needed */
+  resize: none; /* Prevent manual resizing */
+}
+
+.reservation-form button {
+  font-family: 'Fraunces', sans-serif;;
+  background-color: #d4a373;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.reservation-form button:hover {
+  background-color: #c78c5d;
+}
+
+
+.right-side {
+  flex: 1; /* Right side is smaller */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  padding: 0; /* Remove any padding */
+  margin: 0; /* Ensure no margin is applied */
+  position: relative; /* Required for absolute positioning of the image */
+  overflow: hidden; /* Ensure no overflow and the image stays within the container */
+}
+
+.right-side img {
+  width: 550px;  /* Fixed width */
+  height: 600px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the space without distortion */
+  display: block;}
+

@@ -204,3 +204,20 @@ document.addEventListener("DOMContentLoaded", () => {
       item.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
   });
+  function scrollGallery(direction) {
+    const gallery = document.querySelector('.gallery');
+    const scrollAmount = 300; // Number of pixels to scroll
+  
+    if (direction === 'left') {
+      gallery.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    } else if (direction === 'right') {
+      gallery.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
+  
