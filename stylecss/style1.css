@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Great+Vibes&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+  .login-container {
+    width: 800px;
+    height: 450px;
+    display: flex;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .login-image {
+    flex: 1;
+    background: url(../images/about-banner.jpg) no-repeat center center;
+    background-size: cover;
+  }
+  .login-form {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .login-form h1 {
+    font-family: 'Great Vibes', sans-serif;
+    font-size: 35px;
+    color: #361d08;
+    margin-bottom: 20px;
+    align-self: center;
+   }
+  .login-form input {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .login-form button {
+    padding: 12px;
+    border: none;
+    background-color: #361d08;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .login-form button:hover {
+    background-color: #533513a6;
+  }

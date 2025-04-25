@@ -7,6 +7,7 @@
   <title>Through the ages</title>
   <link rel="stylesheet" href="stylecss/style.css">
   <script src="js/src.js"></script>
+  <script src="js/src2.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,13 +55,12 @@
 
       <div class="column section-2">
         <h2 class="column2-title">We Offer Top Notch</h2>
-        <p class="column2-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum
-          has been the industrys standard dummy text ever.</p>
+        <p class="column2-para">Nestled in the heart of Italy, Through the ages offers a true taste of authentic Italian cuisine. Known for its rustic charm and warm atmosphere, the restaurant serves traditional dishes crafted with locally sourced ingredients.</p>
         <div class="image-wrapper">
           <div class="background-image"></div>
           <img src="images/service-2.jpg" alt="Appetizer Image">
         </div>
-        <p class="section-text">Appetizer</p>
+        <p class="section-text Appetizer-text">Appetizer</p>
       </div>
 
       <div class="column section-3">
@@ -85,10 +85,10 @@
       </div>
       <div class="menu-container">
         <ul class="menu-list" id="menu-list">
-          <!-- Menu items will be dynamically added here -->
+
         </ul>
         <div class="image-container" id="image-container">
-          <!-- Images will be dynamically updated here -->
+
         </div>
       </div>
     </section>
@@ -142,23 +142,24 @@
       <div class="left-side">
         <h2>Online Reservation</h2>
         <p>Booking request <a href="tel:+21629332336">+21629332336</a> or fill out the form</p>
-        <form class="reservation-form">
+        <form name="reservationForm" class="reservation-form" onsubmit="return validateForm()" method="POST" action="php\submitReservation.php">
           <div class="form-row">
-            <input type="text" placeholder="Your Name" required>
-            <input type="text" placeholder="Phone Number" required>
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <input type="text" id="phone" name="phone" placeholder="Phone Number">
           </div>
           <div class="form-row">
-            <select>
+            <select name="people"  id="people">
+              <option value="">Select People</option>
               <option>1 Person</option>
               <option>2 People</option>
               <option>3 People</option>
             </select>
-            <input type="date" required>
-            <input type="time" required>
+            <input type="date" id="date" name="date">
+            <input type="time" id="time" name="time">
           </div>
-          <textarea placeholder="Message"></textarea>
+          <textarea name="message" placeholder="Message"></textarea>
           <button type="submit">BOOK A TABLE</button>
-        </form>
+        </form>        
       </div>
       <div class="right-side">
         <img src="images/img-pattern.svg" alt="Description of image">
@@ -227,7 +228,8 @@
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2354.125941478146!2d13.959683799999997!3d40.7321239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b6adf99930f99%3A0xe8e71f67c3ca38fe!2sRistorante%20Al%20Pontile!5e1!3m2!1sen!2stn!4v1743893008732!5m2!1sen!2stn"
           width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </section>
     <!-- Contact page -->

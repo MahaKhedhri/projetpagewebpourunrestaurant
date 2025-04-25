@@ -17,8 +17,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth; /* to scroll down smoothly */
-}
+  scroll-behavior: smooth;
 /* Pour le body */
 
 
@@ -185,6 +184,12 @@ main {
 .image-wrapper img:hover {
   transform: scale(1.1); 
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+.Appetizer-text {
+  border-top: 20px;
+  font-size: 25px;
+  max-width: 300px;
+  font-family: 'Fraunces', sans-serif;
 }
 
                    /* First Section (Breakfast) */
