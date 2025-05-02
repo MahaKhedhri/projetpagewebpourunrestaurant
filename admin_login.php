@@ -1,19 +1,20 @@
 <?php
-session_start();
+session_start();//on commence une session pour enregistrer les données de l'utilisateur
+// Connexion à la base de données
 $conn = mysqli_connect("localhost", "root", "", "throughtheages");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {// check if the form is submitted
+  // Get the username and password from the form
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     $sql = "SELECT * FROM admin WHERE username = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-        $user = $result->fetch_assoc();
+    $stmt->bind_param("s", $username);// bind the username parameter to the SQL query
+    $stmt->execute();// execute the query
+    $result = $stmt->get_result(); // get the result of the query
+    if ($result->num_rows == 1) {// useres exists or not
+        $user = $result->fetch_assoc();// fetch the user data
         if ($password === $user['password']) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];

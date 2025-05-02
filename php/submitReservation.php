@@ -1,29 +1,36 @@
 <?php
-$conn = mysqli_connect("localhost","root","","throughtheages");
+$conn = mysqli_connect("localhost", "root", "", "throughtheages");
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+$reservationMessage = "";
+$reservationClass = "";
+
+if (isset($_POST['reservation_submit'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $people = mysqli_real_escape_string($conn, $_POST['people']);
     $date = mysqli_real_escape_string($conn, $_POST['date']);
     $time = mysqli_real_escape_string($conn, $_POST['time']);
-    $message = mysqli_real_escape_string($conn, $_POST['message']); // Optional
+    $messageInput = mysqli_real_escape_string($conn, $_POST['message']); 
 
-  
     if (empty($name) || empty($phone) || empty($people) || empty($date) || empty($time)) {
-        echo "All fields except message are required.";
+        $reservationMessage = "All fields except message are required.";
+        $reservationClass = "error";
     } else {
         $sql = "INSERT INTO reservations (name, phone, people, date, time, message) 
-                VALUES ('$name', '$phone', '$people', '$date', '$time', '$message')";
+                  VALUES ('$name', '$phone', '$people', '$date', '$time', '$messageInput')";
         if (mysqli_query($conn, $sql)) {
-            echo "Reservation successfully submitted!";
+            $reservationMessage = "Reservation successfully submitted!";
+            $reservationClass = "success";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            $reservationMessage = "Failed to submit reservation. Please try again.";
+            $reservationClass = "error";
         }
     }
-    mysqli_close($conn);
 }
+
+// Close the database connection
+mysqli_close($conn);
 ?>

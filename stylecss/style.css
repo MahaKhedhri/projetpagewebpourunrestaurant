@@ -64,8 +64,29 @@ nav ul li a.active {
 }
 /* Pour le nav */
 
+.notification {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;  
+  background-color: #4CAF50; 
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
+.notification.error {
+  background-color: #e74c3c; 
+}
 
+.notification.show {
+  opacity: 1; 
+}
 
 
 /* Pour le main */

@@ -1,7 +1,7 @@
 
 function validateForm() {
     const form = document.forms["reservationForm"];
-    const name = form["name"].value.trim(); //bch nahy k space ml awel w ml ekher ken ghlot
+    const name = form["name"].value.trim(); 
     const phone = form["phone"].value.trim();
     const people = form["people"].value;
     const date = form["date"].value;

@@ -1,3 +1,62 @@
+<?php
+// Connect to database
+$conn = mysqli_connect("localhost", "root", "", "throughtheages");
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$message = "";
+$messageClass = "success"; // default
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Check which form was submitted
+  if (isset($_POST['reservation'])) {
+    // Reservation form submitted
+    $name = mysqli_real_escape_string($conn, $_POST['name'] ?? '');
+    $phone = mysqli_real_escape_string($conn, $_POST['phone'] ?? '');
+    $people = mysqli_real_escape_string($conn, $_POST['people'] ?? '');
+    $date = mysqli_real_escape_string($conn, $_POST['date'] ?? '');
+    $time = mysqli_real_escape_string($conn, $_POST['time'] ?? '');
+    $messageInput = mysqli_real_escape_string($conn, $_POST['message'] ?? '');
+
+    if (empty($name) || empty($phone) || empty($people) || empty($date) || empty($time)) {
+      $message = "All fields except message are required.";
+      $messageClass = "error";
+    } else {
+      $sql = "INSERT INTO reservations (name, phone, people, date, time, message) 
+                    VALUES ('$name', '$phone', '$people', '$date', '$time', '$messageInput')";
+      if (mysqli_query($conn, $sql)) {
+        $message = "Reservation successfully submitted!";
+        $messageClass = "success";
+      } else {
+        $message = "Failed to submit reservation. Please try again.";
+        $messageClass = "error";
+      }
+    }
+  } elseif (isset($_POST['contact'])) {
+    $fullname = mysqli_real_escape_string($conn, $_POST['fullname'] ?? '');
+    $email = mysqli_real_escape_string($conn, $_POST['email'] ?? '');
+    $msg = mysqli_real_escape_string($conn, $_POST['msg'] ?? '');
+
+    if (empty($fullname) || empty($email) || empty($msg)) {
+      $message = "All fields are required.";
+      $messageClass = "error";
+    } else {
+      $sql = "INSERT INTO contact (name, email, message) 
+                    VALUES ('$fullname', '$email', '$msg')";
+      if (mysqli_query($conn, $sql)) {
+        $message = "Message successfully submitted!";
+        $messageClass = "success";
+      } else {
+        $message = "Failed to submit message. Please try again.";
+        $messageClass = "error";
+      }
+    }
+  }
+}
+
+mysqli_close($conn);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,6 +78,7 @@
 </head>
 
 <body>
+
   <!-- navigation bar  -->
   <nav>
     <ul>
@@ -55,7 +115,6 @@
 
       <div class="column section-2">
         <h2 class="column2-title">We Offer Top Notch</h2>
-        <p class="column2-para">Nestled in the heart of Italy, Through the ages offers a true taste of authentic Italian cuisine. Known for its rustic charm and warm atmosphere, the restaurant serves traditional dishes crafted with locally sourced ingredients.</p>
         <div class="image-wrapper">
           <div class="background-image"></div>
           <img src="images/service-2.jpg" alt="Appetizer Image">
@@ -102,13 +161,15 @@
       <div class="container">
         <div class="about-content">
           <h2 class="about-section-title">Through the ages</h2>
-          <p class="about-section-text">Through the years, our fine dining Italian restaurant has reimagined tradition with
+          <p class="about-section-text">Through the years, our fine dining Italian restaurant has reimagined tradition
+            with
             elegance and innovation. Blending timeless recipes with modern artistry, we create exquisite dishes that
             honor Italy’s rich culinary heritage while offering a refined, contemporary experience.</p>
         </div>
 
         <div class="about-banner">
-          <img src="images/about-banner.jpg" width="570" height="570" loading="lazy" alt="about banner" class="w-100"data-parallax-item data-parallax-speed="1">
+          <img src="images/about-banner.jpg" width="570" height="570" loading="lazy" alt="about banner" class="w-100"
+            data-parallax-item data-parallax-speed="1">
           <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
             <img src="images/about-abs-image.jpg" width="285" height="285" loading="lazy" alt="" class="w-100">
           </div>
@@ -121,7 +182,7 @@
     <!-- About page -->
 
 
-    
+
     <!-- Review page -->
     <section class="review-section">
       <div class="quote-container">
@@ -142,13 +203,20 @@
       <div class="left-side">
         <h2>Online Reservation</h2>
         <p>Booking request <a href="tel:+21629332336">+21629332336</a> or fill out the form</p>
-        <form name="reservationForm" class="reservation-form" onsubmit="return validateForm()" method="POST" action="php\submitReservation.php">
+        <?php
+        if (!empty($message)) {
+          $messageType = isset($messageType) ? $messageType : 'success';
+          echo "<div class='notification $messageType'>$message</div>";
+        }
+        ?><br>
+        <form name="reservationForm" class="reservation-form" onsubmit="return validateForm()" method="POST" action="">
+          <input type="hidden" name="reservation" value="1">
           <div class="form-row">
             <input type="text" id="name" name="name" placeholder="Your Name">
             <input type="text" id="phone" name="phone" placeholder="Phone Number">
           </div>
           <div class="form-row">
-            <select name="people"  id="people">
+            <select name="people" id="people">
               <option value="">Select People</option>
               <option>1 Person</option>
               <option>2 People</option>
@@ -159,7 +227,8 @@
           </div>
           <textarea name="message" placeholder="Message"></textarea>
           <button type="submit">BOOK A TABLE</button>
-        </form>        
+        </form>
+
       </div>
       <div class="right-side">
         <img src="images/img-pattern.svg" alt="Description of image">
@@ -216,12 +285,20 @@
           <p>Call Or Email Us Regarding Question Or Issues</p>
         </div>
         <div class="c-inputs">
-          <form>
-            <input type="text" placeholder="Full Name" />
-            <input type="email" placeholder="Example@gmail.com" />
-            <textarea name="message" placeholder="Write Message"></textarea>
-            <button>SEND</button>
+          <?php
+          if (!empty($message)) {
+            $messageType = isset($messageType) ? $messageType : 'success'; // Default success
+            echo "<div class='notification $messageType'>$message</div>";
+          }
+          ?><br>
+          <form method="POST" action="">
+            <input type="hidden" name="contact" value="1">
+            <input type="text" name="fullname" placeholder="Full Name" />
+            <input type="email" name="email" placeholder="Example@gmail.com" />
+            <textarea name="msg" placeholder="Write Message"></textarea>
+            <button type="submit">SEND</button>
           </form>
+
         </div>
       </div>
       <div class="map">
@@ -235,4 +312,5 @@
     <!-- Contact page -->
   </main>
 </body>
+
 </html>

@@ -2,14 +2,11 @@
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "throughtheages");
 
-// Protect page (simple session check)
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username'])) { // Check if the user is logged in (session variable is set wit username and id)
     header("Location: admin_login.php");
     exit();
 }
-
-// Fetch all reservations
-$reservations = [];
+$reservations = [];//empty array to store reservations
 $sql = "SELECT * FROM reservations ORDER BY date DESC, time DESC";
 $result = $conn->query($sql);
 if ($result && $result->num_rows > 0) {
